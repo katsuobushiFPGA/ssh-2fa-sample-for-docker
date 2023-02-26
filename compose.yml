@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  gateway:
+    build:
+      context: ./gateway
+      args:
+        USER_NAME: ${USER_NAME}
+        USER_PASS: ${USER_PASS}
+        SSH_PORT: ${SSH_PORT}
+    ports:
+      - ${SSH_PORT}:${SSH_PORT}
+    restart: always
